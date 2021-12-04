@@ -1,0 +1,54 @@
+html {
+  background-image: url(/images/drum.jpeg);
+  background-size: cover;
+}
+
+.body {
+  height: 100%;
+  width: 100vh;
+  text-align: center;
+}
+
+.letters {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  /* padding-left: 10px; */
+  min-height: 100vh;
+}
+
+.letter {
+  margin: 5px;
+  height: 75px;
+  width: 82px;
+  border-radius: 5px;
+  border: 3px solid black;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  transition: all .07s ease;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+  font-size: 1.5rem;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: -9px;
+  display: block;
+  font-size: 2rem;
+}
+
+.sound {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
