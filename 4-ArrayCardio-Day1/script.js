@@ -70,7 +70,7 @@ console.table(oldest);
 
 
 // 7. Sort Exercise
-// Sort the people alphaetically by last name
+// Sort the people alphabetically by last name
 const alpha = people.sort((lastOne, nextOne) => {
   const [aLast, aFirst] = lastOne.split(', ');
   const [bLast, bFirst] = nextOne.split(', ');
