@@ -28,10 +28,12 @@ console.table(fifteen)
 
 // Array.prototype.map()
 // 2. Give us an array of the inventory first and last names
-const fullName = inventors.map(name => {
-  return [name.first, name.last].join(" ");
-});
-console.table(fullName)
+const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+console.log(fullNames)
+
+// const fullName = inventors.map(name => {
+//   return [name.first, name.last].join(" ");
+// });
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
@@ -41,14 +43,13 @@ const birthDate = inventors.sort((a, b) => {
 console.table(birthDate)
 
 // const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
-// console.table(ordered);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live?
 const totalYears = inventors.reduce((total, inventor) => {
   return total + (inventor.passed - inventor.year);
 }, 0);
-console.table(totalYears)
+console.log(totalYears)
 
 // 5. Sort the inventors by years lived
 const oldest = inventors.sort((last, next) => {
@@ -59,9 +60,33 @@ const oldest = inventors.sort((last, next) => {
 console.table(oldest);
 
 // 6. Create a list of Boulevards in Paris that contain 'de' anywhere in the name
+// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+// const category = document.querySelector('.mw-category');
+// const links = Array.from(category.querySelectorAll('a'));
+// const de = links
+//             .map(link => link.textContent)
+//             .filter(streetName => streetName.includes('de'));
+
 
 // 7. Sort Exercise
 // Sort the people alphaetically by last name
-
+const alpha = people.sort((lastOne, nextOne) => {
+  const [aLast, aFirst] = lastOne.split(', ');
+  const [bLast, bFirst] = nextOne.split(', ');
+  return aLast > bLast ? 1 : -1;
+});
+console.log(alpha);
 // 8. Reduce exercise
 // Sum up the instances of each of these
+const browsers = ['Chrome', 'Firefox', 'Safari', 'Firefox', 'Opera', 'IE', 'Opera', 'Chrome', 'Firefox', 'Opera', 'Safari', 'Chrome', 'Chrome', 'Firefox', 'Safari', 'Chrome', 'Opera', 'Firefox', 'Firefox', ];
+
+const internet = browsers.reduce((obj, item) => {
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+  obj[item]++;
+  return obj;
+}, {});
+
+console.log(internet);
